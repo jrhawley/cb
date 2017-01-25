@@ -10,9 +10,11 @@ It's like your normal copy and paste commands, but unified and able to sense whe
 
 ### Copy
 
-    $ date | cb
-    # clipboard contains: Tue Jan 24 23:00:00 EST 2017
-    
+```bash
+$ date | cb
+# clipboard contains: Tue Jan 24 23:00:00 EST 2017
+```
+
 ### Paste
 
     # clipboard retained from the previous block
