@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -p /dev/stdin ]]; then # stdin is a pipe
+    cat | xclip -selection clipboard # so send it to the pasteboard
+    if [[ ! -t 1 ]]; then # also, stdout is not a tty (meaning it must be a pipe or redirection)
+        xclip -selection clipboard -o # so pass that pipe/redirection the content of the pasteboard (enables `man tee` like chaining)
+    fi
+else # stdin is not a pipe
+    xclip -selection clipboard -o # so output the pasteboard
+fi

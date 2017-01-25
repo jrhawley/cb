@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -p /dev/stdin ]]; then # stdin is a pipe
+    cat > /dev/clipboard # so send it to the clipboard
+    if [[ ! -t 1 ]]; then # also, stdout is not a tty (meaning it must be a pipe or redirection)
+        cat /dev/clipboard # so pass that pipe/redirection the content of the clipboard (enables `man tee` like chaining)
+    fi
+else # stdin is not a pipe
+    cat /dev/clipboard # so output the clipboard
+fi
