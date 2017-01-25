@@ -17,23 +17,26 @@ $ date | cb
 
 ### Paste
 
-    # clipboard retained from the previous block
-    $ cb
-    Tue Jan 24 23:00:00 EST 2017
-    $ cb | cat
-    Tue Jan 24 23:00:00 EST 2017
-    $ cb > foo
-    $ cat foo
-    Tue Jan 24 23:00:00 EST 2017
+```bash
+# clipboard retained from the previous block
+$ cb
+Tue Jan 24 23:00:00 EST 2017
+$ cb | cat
+Tue Jan 24 23:00:00 EST 2017
+$ cb > foo
+$ cat foo
+Tue Jan 24 23:00:00 EST 2017
+```
 
 ### Chaining
 
-    $ date | cb | tee updates.log
-    Tue Jan 24 23:11:11 EST 2017
-    $ cat updates.log
-    Tue Jan 24 23:11:11 EST 2017
-    # clipboard contains: Tue Jan 24 23:11:11 EST 2017
-
+```bash
+$ date | cb | tee updates.log
+Tue Jan 24 23:11:11 EST 2017
+$ cat updates.log
+Tue Jan 24 23:11:11 EST 2017
+# clipboard contains: Tue Jan 24 23:11:11 EST 2017
+```
 
   [1]: https://gist.github.com/RichardBronosky/56d8f614fab2bacdd8b048fb58d0c0c7
   [2]: 
