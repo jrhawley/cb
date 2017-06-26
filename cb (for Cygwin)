@@ -18,13 +18,21 @@ else
     t1=0
 fi
 
+_copy(){
+    cat > /dev/clipboard
+}
+
+_paste(){
+    cat /dev/clipboard
+}
+
 if [[ $p0 -eq 1 || $t0 -eq 0 ]]; then # stdin is pipe-ish
-    cat > /dev/clipboard # so send it to the pasteboard
+    _copy # so send it to the clipboard
     if [[ $t1 -eq 0 ]]; then # also, stdout is not a tty (meaning it must be a pipe or redirection)
-        cat /dev/clipboard # so pass that pipe/redirection the content of the pasteboard (enables `man tee` like chaining)
+        _paste # so pass that pipe/redirection the content of the clipboard (enables `man tee` like chaining)
     fi
 else # stdin is not a pipe
-    cat /dev/clipboard # so output the pasteboard
+    _paste # so output the clipboard
     if [[ $t1 -eq 1 ]]; then # stdout is a tty (so we don't have to be strict about not altering the output)
         echo # prevent the prompt from being on the same line
     fi
