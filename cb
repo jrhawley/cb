@@ -18,7 +18,7 @@ else
     t1=0
 fi
 
-if grep -q Microsoft /proc/version; then
+if [[ -f /proc/version ]] && grep -q Microsoft /proc/version; then
     os="WSL"
 else
     unameOut="$(uname -s)"
