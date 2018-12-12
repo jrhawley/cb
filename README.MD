@@ -1,3 +1,4 @@
+
 # cb
 ## A leak-proof tee to the clipboard
 
@@ -11,8 +12,9 @@ It's like your normal copy and paste commands, but unified and able to sense whe
 ### Copy
 
 ```bash
-$ date | cb
+$ echo -n $(date) | cb
 # clipboard contains: Tue Jan 24 23:00:00 EST 2017
+# but, because of `echo -n` there is no newline at the end
 ```
 
 ### Paste
@@ -21,9 +23,11 @@ $ date | cb
 # clipboard retained from the previous block
 $ cb
 Tue Jan 24 23:00:00 EST 2017
+# above there is a newline after the output for readability
+# below there is no newline because cb recognized that it was outputing to a pipe and any alterations would "contaminate" the data
 $ cb | cat
-Tue Jan 24 23:00:00 EST 2017
-$ cb > foo
+Tue Jan 24 23:00:00 EST 2017$ cb > foo
+# look carefully at this   ^^ that's a new $ prompt at the end of the content exactly as copied
 $ cat foo
 Tue Jan 24 23:00:00 EST 2017
 ```
