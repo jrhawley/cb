@@ -45,5 +45,4 @@ Tue Jan 24 23:11:11 EST 2017
 ```
 
   [1]: https://gist.github.com/RichardBronosky/56d8f614fab2bacdd8b048fb58d0c0c7
-  [2]: 
-http://man7.org/linux/man-pages/man1/tee.1.html
+  [2]: http://man7.org/linux/man-pages/man1/tee.1.html
