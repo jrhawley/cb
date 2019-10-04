@@ -4,6 +4,8 @@
 
 This script is modeled after `tee` (see [`man tee`][2]).
 
+This was forked from [@RichardBronosky](https://gist.github.com/RichardBronosky/56d8f614fab2bacdd8b048fb58d0c0c7) into its own tool.
+
 It's like your normal copy and paste commands, but unified and able to sense when you want it to be chainable
 
 ## Examples
